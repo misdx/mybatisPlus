@@ -1,0 +1,29 @@
+mybatis-plus:
+  typeAliasesPackage: com.cssl.pojo
+  mapper-locations: classpath:com/cssl/dao/*.xml
+  configuration:
+    auto-mapping-behavior: full
+    use-generated-keys: true
+  global-config:
+    db-config:
+      id-type: id_worker
+      field-strategy: not_empty
+      column-underline: false
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: true
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///top13
+    username: root
+    password: 123
+  jackson:
+    date-format: yyyy-MM-dd HH:mm
+    time-zone: GMT+8
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
